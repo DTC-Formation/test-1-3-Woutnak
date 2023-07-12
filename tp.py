@@ -19,8 +19,10 @@ if nom_utilisateur in utilisateurs:
 elif nom_utilisateur not in utilisateurs:
       utilisateurs['nom'] =  nom_utilisateur
       print("Bonjour {} et bienvenue sur TO DO List" .format(utilisateurs['nom']))
+#dedier a chaque utilisateur son propre tache
+utilisateurs ['tache'] = tache    
 #il faut avoir un fichier json qui  enregistre tout les utilisateurs 
-print(utilisateurs)  
+#print(utilisateurs)  
 #///////LES ACTIONS////////
 while True:
    print("//////////////////////////////////////////")
@@ -51,24 +53,25 @@ while True:
         #conversion en json
         #data = json.dumps(tache)
         #fichier json   
-        f = open('tache.json',"r")
-        f.read()
+        #f = open('tache.json',"r")
+        #f.read()
         
 
 #2 - Affichage des tâches
    elif user_action == "2" :
 #ajout de nouveau dans le liste des tach#Ajout des taches dans liste_taches
        liste_taches.append(tache['nom'])
-       print("{} Votre To do list {} :".format(user_actuel,liste_taches)) 
+       print("{} Votre To do list {} :".format(nom_utilisateur,liste_taches)) 
    
    
 #3 - Modification d'une tâche
    elif user_action == "3" :
       print('Modification d\'une tâche:')
-#type de status :commencer,en cours,terminer,rater
-# statut = ['commencer','en cours','terminer','rater']
-#deadline = datetime.fromisoformat(input_deadline)
-# delai = datetime.now - deadline
+      #type de status :commencer,en cours,terminer,rater
+      # statut = ['commencer','en cours','terminer','rater']
+      date0 = datetime(input_deadline)
+      deadline = datetime.fromisoformat(date0)
+      delai = datetime.now - deadline
 
 #4 - Enregistrement des tâches
    elif user_action == "4" :
